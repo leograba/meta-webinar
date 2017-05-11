@@ -1,0 +1,10 @@
+[Unit]
+Description=imu-mpu6050 logger service, collects data periodically
+After=multi-user.target
+ 
+[Service]
+Type=simple
+ExecStart=/usr/bin/imu-mpu6050.sh
+ 
+[Install]
+WantedBy=multi-user.target

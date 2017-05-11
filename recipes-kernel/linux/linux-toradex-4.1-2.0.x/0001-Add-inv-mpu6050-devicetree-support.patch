@@ -1,0 +1,31 @@
+From 2d7ea4d100e56de4973307f914e9ec8710a58daa Mon Sep 17 00:00:00 2001
+From: Leonardo Graboski Veiga <leonardo.veiga@toradex.com>
+Date: Mon, 8 May 2017 15:26:28 -0300
+Subject: [PATCH] Add inv-mpu6050 devicetree support
+
+---
+ arch/arm/boot/dts/imx6dl-colibri-eval-v3.dts | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+diff --git a/arch/arm/boot/dts/imx6dl-colibri-eval-v3.dts b/arch/arm/boot/dts/imx6dl-colibri-eval-v3.dts
+index acd9031..bde655c 100644
+--- a/arch/arm/boot/dts/imx6dl-colibri-eval-v3.dts
++++ b/arch/arm/boot/dts/imx6dl-colibri-eval-v3.dts
+@@ -157,6 +157,14 @@
+ 		compatible = "st,m41t0";
+ 		reg = <0x68>;
+ 	};
++
++	mpu6050@69{
++		compatible = "invensense,mpu6050";
++		reg = <0x69>;
++		interrupt-parent = <&gpio1>;
++		interrupts = <18 1>;
++	};
++
+ };
+ 
+ /*
+-- 
+2.7.4
+
