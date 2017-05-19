@@ -20,7 +20,7 @@ while true; do
     if (( i == 2 )); then
         echo "Refresh"
         i=0
-        echo ${TMPFILE} > ${LOGFILE}
+        cat "${TMPFILE}" > ${LOGFILE}
 	create_logfile
     fi
 done
